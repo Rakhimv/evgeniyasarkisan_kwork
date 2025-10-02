@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 480px;
+  --breakpoint-xsmin: 400px;
+  --breakpoint-noxs480: (max-width: 480px);
+  --breakpoint-xs550: 550px;
+  --breakpoint-noxs550: (max-width: 550px);
+  --breakpoint-xs658: 658px;
+  --breakpoint-noxs658: (max-width: 658px);
+  --breakpoint-xs850: 850px;
+  --breakpoint-xs1000: 1000px;
+  --breakpoint-noxs1000: (max-width: 1000px);
+  --breakpoint-xs1167: 1167px;
+  --breakpoint-noxs1167: (max-width: 1167px);
+  --breakpoint-xs1350: 1350px;
+  --breakpoint-noxs1350: (max-width: 1350px);
+  --breakpoint-exl: (max-width: 1535px);
+  --breakpoint-xl: (max-width: 1279px);
+  --breakpoint-lg: (max-width: 1024px);
+  --breakpoint-ll: (max-width: 900px);
+  --breakpoint-md: (max-width: 767px);
+  --breakpoint-sm: (max-width: 600px);
+  --breakpoint-sw: (max-width: 500px);
+  --breakpoint-mb: (max-width: 425px);
+}

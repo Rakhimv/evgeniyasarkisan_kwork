@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+  font-family: "bebas";
+  src: url('/11585.ttf');
+}
+
+@font-face {
+  font-family: "bebas2";
+  src: url('/11819.ttf');
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: "bebas";
+}
+
+// h2, p, h1 {
+//   transform: scaleY(1.1);
+// }
+
+$prim: #2E5943;
+$sec: #475763;
+
+.txp {
+  color: $prim;
+}
+
+.txs {
+  color: $sec;
+}
+
+.bgp {
+  background-color: $prim;
+}
+
+
+.bb2 {
+  font-family: "bebas2";
+}
+
+body {
+  min-height: 100vh;
+}
+
+.bgone {
+  background-image: url('/bg1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+}
+
+
+@media (max-width: 1350px) {
+  .bgone {
+    background-image: url('/bg1m.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover; 
+  }
+}
+
+.bgtwo {
+  background-image: url('/bg2.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right center;
+}
+
+
+.bg3 {
+  background-image: url('/bg3.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: right center;
+}
+
+
+.bg4 {
+  background-image: url('/footer.svg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left top;
+}
