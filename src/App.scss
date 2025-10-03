@@ -42,6 +42,29 @@ $sec: #475763;
 
 body {
   min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+// Стили для плавных анимаций при скролле
+.scroll-animation {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+// Улучшенная производительность для анимированных элементов
+.scroll-animation * {
+  will-change: auto;
+}
+
+// Предотвращение мерцания на мобильных устройствах
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animation {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 .bgone {
@@ -57,7 +80,7 @@ body {
     background-image: url('/bg1m.png');
     background-repeat: no-repeat;
     background-position: left top;
-    background-size: cover; 
+    background-size: cover;
   }
 }
 
@@ -69,6 +92,17 @@ body {
 }
 
 
+
+@media (max-width: 1350px) {
+  .bgtwo {
+    background-image: url('/tgbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
+
 .bg3 {
   background-image: url('/bg3.png');
   background-repeat: no-repeat;
@@ -77,9 +111,32 @@ body {
 }
 
 
+
+
+@media (max-width: 750px) {
+  .bg3 {
+    background-image: url('/bg3.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+  }
+}
+
+
 .bg4 {
   background-image: url('/footer.svg');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: left top;
+}
+
+
+@media (max-width: 658px) {
+  .bg4 {
+    background-image: url('/footer.svg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center bottom;
+  }
+
 }

@@ -44,9 +44,9 @@ const Products: React.FC = () => {
     return (
         <section className="py-12 px-[5%] bg-[#EDF6FA] w-full">
             <div className="mb-12 w-full flex flex-col items-center">
-                <div className="flex items-center gap-[15px]">
-                    <img src="/products.svg " className="w-[60px]" />
-                    <p className="text-5xl txs font-bold uppercase">
+                <div className="flex items-center flex-col xs550:flex-row gap-[15px]">
+                    <img src="/products.svg " className="w-[120px] xs550:w-[60px]" />
+                    <p className="text-[30px] text-center xs550:text-left xs550:text-3xl xs658:text-5xl txs font-bold uppercase">
                         ПРОДУКТЫ И ФОРМАТЫ РАБОТЫ
                     </p>
                 </div>
@@ -55,7 +55,7 @@ const Products: React.FC = () => {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-y-[30px] gap-x-[20px]">
+            <div className="grid grid-cols-1 xs658:grid-cols-2 xs1000:grid-cols-3 gap-y-[30px] gap-x-[20px]">
                 {formats.map((format) => (
                     <div key={format.id}>
                         <div className="flex items-start mb-2 gap-[10px]">
@@ -73,11 +73,11 @@ const Products: React.FC = () => {
 
 
                             <div>
-                                <h3 className="text-3xl txs font-bold uppercase">
+                                <h3 className="text-2xl xs850:text-3xl txs font-bold uppercase">
                                     {format.title}
                                 </h3>
                                 {format.subtitle && (
-                                    <p className="text-3xl txs font-bold uppercase">
+                                    <p className="text-2xl xs850:text-3xl txs font-bold uppercase">
                                         {format.subtitle}
                                     </p>
                                 )}
@@ -85,7 +85,7 @@ const Products: React.FC = () => {
                         </div>
 
 
-                        <p className="text-black text-2xl leading-7 ml-[50px] bb2">
+                        <p className="text-black text-xl xs850:text-2xl leading-7 ml-[50px] bb2">
                             {format.description}
                         </p>
                     </div>
@@ -96,6 +96,7 @@ const Products: React.FC = () => {
                 <ActionButton
                     text="подобрать формат под мой бизнес"
                     icon="/st.svg"
+                    openForm
                 />
             </div>
         </section>

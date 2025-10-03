@@ -13,12 +13,12 @@ const HowWeWork: React.FC = () => {
     return (
         <section className="py-12 px-6 bg3 w-full">
 
-            <div className="flex gap-[10px] items-end justify-between px-[5%]">
+            <div className="flex flex-col xs1000:flex-row gap-[10px] items-center xs750:items-start xs1000:items-end justify-between px-[5%]">
                 <div className="flex gap-[5px]" >
                     <img src="/wt.svg" className="w-[40px]" alt="" />
                     <h2 className="text-4xl font-bold uppercase txp">как мы работаем?</h2>
                 </div>
-                <h2 className="text-4xl uppercase bb2">как начать работать со мной?</h2>
+                <h2 className="text-center text-3xl xs750:text-left xs750:text-4xl uppercase bb2">как начать работать со мной?</h2>
             </div>
 
 
@@ -30,7 +30,7 @@ const HowWeWork: React.FC = () => {
                         <div className={`relative rounded-full`}>
                             <div className=" inset-0 rounded-full p-[2px] bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200">
                                 <div className="h-[45px] w-[45px] rounded-full bgp flex items-center justify-center text-[37px] font-bold text-white">
-                                    {index+1}
+                                    {index + 1}
                                 </div>
 
                             </div>
@@ -54,6 +54,7 @@ const HowWeWork: React.FC = () => {
                 <ActionButton
                     text="ЗАПИСАТЬСЯ НА АУДИТ"
                     icon="/find.svg"
+                    openForm
                 />
             </div>
 

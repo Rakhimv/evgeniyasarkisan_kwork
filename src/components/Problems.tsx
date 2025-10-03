@@ -40,8 +40,10 @@ const Problems: React.FC = () => {
 
             <div className="ml-[5%] max-w-[300px] mt-[20px]">
                 <ActionButton
+                    openForm
                     text="хочу решить эти проблемы"
                     icon="/idea.svg"
+                    
                 />
             </div>
 

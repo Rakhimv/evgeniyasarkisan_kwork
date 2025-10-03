@@ -3,11 +3,14 @@
 @theme {
   --breakpoint-xs: 480px;
   --breakpoint-xsmin: 400px;
+  --breakpoint-xs430: 430px;
   --breakpoint-noxs480: (max-width: 480px);
   --breakpoint-xs550: 550px;
   --breakpoint-noxs550: (max-width: 550px);
   --breakpoint-xs658: 658px;
   --breakpoint-noxs658: (max-width: 658px);
+  --breakpoint-xs750: 750px;
+  --breakpoint-noxs750: (max-width: 750px);
   --breakpoint-xs850: 850px;
   --breakpoint-xs1000: 1000px;
   --breakpoint-noxs1000: (max-width: 1000px);

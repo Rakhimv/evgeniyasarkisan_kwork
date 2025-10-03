@@ -11,22 +11,53 @@ import AboutMe from "./components/AboutMe";
 import HowWeWork from "./components/HowWeWork";
 import PodFooter from "./components/PodFooter";
 import Footer from "./components/Footer";
+import ScrollAnimation from "./components/ScrollAnimation";
 const App: React.FC = () => {
     return (
         <div className="font-sans flex flex-col items-center max-w-[1560px] m-auto gap-[50px] overflow-hidden">
-            <Hero />
-            <Problems />
-            <Results />
-            {/* 
-         
-            <TelegramChannel />
-            <WhyMe />
-            <Products />
-            <Cases />
-            <AboutMe />
-            <HowWeWork />
-            <PodFooter />
-            <Footer /> */}
+            <ScrollAnimation direction="up" delay={0.2}>
+                <Hero />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="up" delay={0.1}>
+                <Problems />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="up" delay={0.2}>
+                <Results />
+            </ScrollAnimation>
+
+            <ScrollAnimation direction="left" delay={0.1}>
+                <TelegramChannel />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="right" delay={0.2}>
+                <WhyMe />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="up" delay={0.1}>
+                <Products />
+            </ScrollAnimation>
+
+            <ScrollAnimation direction="up" delay={0.2}>
+                <Cases />
+            </ScrollAnimation>
+
+            <ScrollAnimation direction="left" delay={0.1}>
+                <AboutMe />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="right" delay={0.2}>
+                <HowWeWork />
+            </ScrollAnimation>
+
+            <ScrollAnimation direction="up" delay={0.1}>
+                <PodFooter />
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="up" delay={0.2}>
+                <Footer />
+            </ScrollAnimation>
         </div>
     );
 };

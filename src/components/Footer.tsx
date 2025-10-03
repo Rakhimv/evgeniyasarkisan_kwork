@@ -6,36 +6,47 @@ const Footer: React.FC = () => {
     const info = [
         {
             icon: "itel.svg",
-            text: "+7(999) 999 88 77"
+            text: "+7(999) 999 88 77",
+            rd: "tel:+79999998877"
         },
         {
             icon: "imail.svg",
-            text: "ESARKISYN@YANDEX.RU"
+            text: "ESARKISYN@YANDEX.RU",
+            rd: "mailto:ESARKISYN@YANDEX.RU"
         },
         {
             icon: "itg.svg",
-            text: "+7(999) 999 88 77"
+            text: "+7(999) 999 88 77",
+            rd: "https://t.me/+79999998877"
         },
     ]
 
     return (
         <footer className="footer bg4 bg-[#E1E3E2] w-full">
-            <div className="h-[400px] grid grid-cols-3">
-                <div></div>
-                <div className="mt-[30px] text-[32px] text-[#565757]">
+            <div className="h-[400px] grid grid-cols-1 xs658:grid-cols-2 xs850:grid-cols-3">
+                <div className="hidden xs658:block"></div>
+                <div className="mt-[30px] text-[32px] flex flex-col m-auto text-[#565757]">
                     <p>КОНТАКТНАЯ ИНФОРМАЦИЯ:</p>
                     {info.map((item) =>
-                        <div className="flex items-center gap-[10px]">
-                            <img className="w-[40px] h-[40px]" src={`/${item.icon}`} />
-                            <p className="bb2">{item.text}</p>
-                        </div>
+                        <a href={item.rd} className="cursor-pointer">
+                            <div className="flex items-center gap-[10px]">
+                                <img className="w-[40px] h-[40px]" src={`/${item.icon}`} />
+                                <p className="bb2">{item.text}</p>
+                            </div>
+                        </a>
 
                     )}
 
 
                     <div className="flex mt-[20px] gap-[10px] items-center">
-                        <img className="cursor-pointer hover:scale-[1.1] transition-all w-[45px] h-[45px]" src={`/wk.svg`} />
-                        <img className="cursor-pointer hover:scale-[1.1] transition-all w-[40px] h-[40px]" src={`/ok.svg`} />
+
+                        <a href="https://vk.ru">
+                            <img className="cursor-pointer hover:scale-[1.1] transition-all w-[45px] h-[45px]" src={`/wk.svg`} />
+                        </a>
+
+                        <a href="https://ok.ru">
+                            <img className="cursor-pointer hover:scale-[1.1] transition-all w-[40px] h-[40px]" src={`/ok.svg`} />
+                        </a>
                     </div>
 
 
@@ -47,9 +58,13 @@ const Footer: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <div className="h-full flex items-end justify-center">
+                <div className="hidden xs850:flex h-full items-end justify-center">
                     <img src="/ev2.png" className="w-full max-w-[500px]" />
                 </div>
+            </div>
+
+            <div className="block xs658:hidden h-full items-end justify-center">
+                <img src="/ev2.png" className="w-full max-w-[500px]" />
             </div>
         </footer>
     );

@@ -2,6 +2,8 @@ import React from "react";
 import ActionButton from "./ActionBtn";
 
 const Hero: React.FC = () => {
+
+
     return (
         <section className="w-full pr-[5%] xs1350:pr-[0%] text-center bgone relative xs1350:pb-[50px]">
 
@@ -52,9 +54,15 @@ const Hero: React.FC = () => {
                     iconSize={40}
                     text="Записаться на консультацию"
                     padding="p-2"
+                    openForm
                 />
-                <ActionButton icon="/block.svg" text="посмотреть кейсы" />
-                <ActionButton icon="/tg.svg" text="Вступить в TELEGRAM канал" />
+                <ActionButton
+                    openForm
+                    icon="/block.svg" text="посмотреть кейсы" />
+                <ActionButton
+                    openTg
+                    icon="/tg.svg"
+                    text="Вступить в TELEGRAM канал" />
             </div>
 
 
