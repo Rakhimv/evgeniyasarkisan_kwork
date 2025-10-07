@@ -68,7 +68,7 @@ body {
 }
 
 .bgone {
-  background-image: url('/bg1.png');
+  background-image: url('/media/bg1.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -77,15 +77,22 @@ body {
 
 @media (max-width: 1350px) {
   .bgone {
-    background-image: url('/bg1m.png');
+    background-image: url('/media/bg1m.png');
     background-repeat: no-repeat;
     background-position: left top;
     background-size: cover;
   }
 }
+@media (max-width: 750px) {
+  .bgone {
+    background-image: url('/media/bg1m2.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
 
 .bgtwo {
-  background-image: url('/bg2.png');
+  background-image: url('/media/bg2.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right center;
@@ -95,7 +102,7 @@ body {
 
 @media (max-width: 1350px) {
   .bgtwo {
-    background-image: url('/tgbg.png');
+    background-image: url('/media/tgbg.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -104,7 +111,7 @@ body {
 
 
 .bg3 {
-  background-image: url('/bg3.png');
+  background-image: url('/media/bg3.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: right center;
@@ -115,7 +122,7 @@ body {
 
 @media (max-width: 750px) {
   .bg3 {
-    background-image: url('/bg3.png');
+    background-image: none;
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center center;
@@ -124,7 +131,7 @@ body {
 
 
 .bg4 {
-  background-image: url('/footer.svg');
+  background-image: url('/media/footer.svg');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: left top;
@@ -133,10 +140,10 @@ body {
 
 @media (max-width: 658px) {
   .bg4 {
-    background-image: url('/footer.svg');
+    background-image: url('/media/ft.png');
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center bottom;
+    background-size: 100%;
+    background-position: top;
   }
 
 }

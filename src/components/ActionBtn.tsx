@@ -8,6 +8,7 @@ type ActionButtonProps = {
     padding?: string;
     openForm?: boolean;
     openTg?: boolean;
+    openTg2?: boolean;
 };
 
 const ActionButton: React.FC<ActionButtonProps> = ({
@@ -16,7 +17,8 @@ const ActionButton: React.FC<ActionButtonProps> = ({
     text,
     padding = "p-3",
     openForm,
-    openTg
+    openTg,
+    openTg2,
 }) => {
 
     const [open, setOpen] = useState(false);
@@ -30,7 +32,10 @@ const ActionButton: React.FC<ActionButtonProps> = ({
                         setOpen(true)
                     }
                     if(openTg) {
-                        window.open("https://t.me/+79999998877")
+                        window.open("https://t.me/Esarkisyan1")
+                    }
+                    if(openTg2) {
+                        window.open("https://t.me/esarkisyan_rop_1")
                     }
                 }}
                 className="flex w-full items-center cursor-pointer  hover:scale-[1.02] active:scale-[1.02] transition-all">

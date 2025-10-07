@@ -13,7 +13,8 @@ type ModalFormProps = {
 const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+    const [privacyConsent, setPrivacyConsent] = useState(false);
+    const [errors, setErrors] = useState<{ name?: string; phone?: string; privacy?: string }>({});
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -37,9 +38,10 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
     }, [isOpen]);
 
     const validate = () => {
-        let newErrors: { name?: string; phone?: string } = {};
+        let newErrors: { name?: string; phone?: string; privacy?: string } = {};
         if (!name.trim()) newErrors.name = "Введите имя";
         if (!phone.trim()) newErrors.phone = "Введите телефон";
+        if (!privacyConsent) newErrors.privacy = "Необходимо согласие на обработку данных";
         return newErrors;
     };
 
@@ -51,7 +53,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
 
         try {
             setLoading(true);
-            await axios.post("https://example.com/api/form", {
+            await axios.post("/api/send-form.php", {
                 name,
                 phone,
             });
@@ -59,6 +61,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
             setSuccess(true);
             setName("");
             setPhone("");
+            setPrivacyConsent(false);
             setErrors({});
         } catch (err) {
             alert("❌ Ошибка при отправке");
@@ -71,6 +74,7 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
         setSuccess(false);
         setName("");
         setPhone("");
+        setPrivacyConsent(false);
         setErrors({});
         setLoading(false);
         onClose();
@@ -80,14 +84,14 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+                    className="fixed inset-0 bg-black/80  flex items-center justify-center z-50"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onClick={handleClose}
                 >
                     <motion.div
-                        className="bg-white rounded-2xl p-6 w-[90%] xs658:w-[400px] shadow-lg relative"
+                        className="bg-white p-6 w-[90%] xs658:w-[400px] shadow-lg relative rounded-0"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.8, opacity: 0 }}
@@ -157,6 +161,30 @@ const ModalForm: React.FC<ModalFormProps> = ({ isOpen, onClose }) => {
                                             <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
                                         )}
                                     </div>
+
+                                    <div className="flex items-start gap-3">
+                                        <input
+                                            type="checkbox"
+                                            id="privacy-consent"
+                                            checked={privacyConsent}
+                                            onChange={(e) => setPrivacyConsent(e.target.checked)}
+                                            className="mt-1 w-4 h-4 text-[#2E5943] bg-gray-100 border-gray-300 rounded focus:ring-[#2E5943] focus:ring-2"
+                                        />
+                                        <label htmlFor="privacy-consent" className="text-sm text-gray-700">
+                                            Я согласен с{" "}
+                                            <a
+                                                href="/privacy"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-[#2E5943] underline hover:opacity-80"
+                                            >
+                                                обработкой персональных данных
+                                            </a>
+                                        </label>
+                                    </div>
+                                    {errors.privacy && (
+                                        <p className="text-red-500 text-sm">{errors.privacy}</p>
+                                    )}
 
                                     <button
                                         type="submit"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Hero from "./components/Hero";
 import "./App.scss"
 import Problems from "./components/Problems";
@@ -12,9 +13,11 @@ import HowWeWork from "./components/HowWeWork";
 import PodFooter from "./components/PodFooter";
 import Footer from "./components/Footer";
 import ScrollAnimation from "./components/ScrollAnimation";
-const App: React.FC = () => {
+import PrivacyPolicy from "./components/PrivacyPolicy";
+
+const HomePage: React.FC = () => {
     return (
-        <div className="font-sans flex flex-col items-center max-w-[1560px] m-auto gap-[50px] overflow-hidden">
+        <div className="font-sans flex flex-col items-center max-w-[1560px] m-auto overflow-hidden">
             <ScrollAnimation direction="up" delay={0.2}>
                 <Hero />
             </ScrollAnimation>
@@ -39,9 +42,9 @@ const App: React.FC = () => {
                 <Products />
             </ScrollAnimation>
 
-            <ScrollAnimation direction="up" delay={0.2}>
+        
                 <Cases />
-            </ScrollAnimation>
+
 
             <ScrollAnimation direction="left" delay={0.1}>
                 <AboutMe />
@@ -59,6 +62,15 @@ const App: React.FC = () => {
                 <Footer />
             </ScrollAnimation>
         </div>
+    );
+};
+
+const App: React.FC = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+        </Routes>
     );
 };
 

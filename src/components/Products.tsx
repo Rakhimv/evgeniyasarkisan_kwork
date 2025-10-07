@@ -45,7 +45,7 @@ const Products: React.FC = () => {
         <section className="py-12 px-[5%] bg-[#EDF6FA] w-full">
             <div className="mb-12 w-full flex flex-col items-center">
                 <div className="flex items-center flex-col xs550:flex-row gap-[15px]">
-                    <img src="/products.svg " className="w-[120px] xs550:w-[60px]" />
+                    <img src="/media/products.svg " className="w-[120px] xs550:w-[60px]" />
                     <p className="text-[30px] text-center xs550:text-left xs550:text-3xl xs658:text-5xl txs font-bold uppercase">
                         ПРОДУКТЫ И ФОРМАТЫ РАБОТЫ
                     </p>
@@ -95,7 +95,7 @@ const Products: React.FC = () => {
             <div className="ml-[2%] max-w-[400px] mt-[30px]">
                 <ActionButton
                     text="подобрать формат под мой бизнес"
-                    icon="/st.svg"
+                    icon="/media/st.svg"
                     openForm
                 />
             </div>
